@@ -9,11 +9,12 @@ namespace RPG.Control
     {
         void Update()
         {
-            InteractWithCombat();
+            if (InteractWithCombat()) return;
             InteractWithMovement();
+            print("Nothing to do.");
         }
 
-        private void InteractWithCombat()
+        private bool InteractWithCombat()
         {
             RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
             foreach (RaycastHit hit in hits)
@@ -25,7 +26,9 @@ namespace RPG.Control
                 {
                     GetComponent<Fighter>().Attack(target);
                 }
+                return true;
             }
+            return false;
         }
 
         private void InteractWithMovement()
