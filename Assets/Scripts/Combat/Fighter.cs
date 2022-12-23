@@ -56,7 +56,7 @@ namespace RPG.Combat
         // this is an amination event
         void Hit()
         {
-
+            // this is for a test change
         }
     }
 }
