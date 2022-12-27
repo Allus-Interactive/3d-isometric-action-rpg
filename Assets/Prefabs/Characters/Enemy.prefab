@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: health
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: -7821469856046506110, guid: 48b40ae4a9aeb2546a418978c1be0568, type: 3}
+      propertyPath: healthPoints
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 755251223731487664, guid: 48b40ae4a9aeb2546a418978c1be0568, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -71,18 +75,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 755251223731487664, guid: 48b40ae4a9aeb2546a418978c1be0568, type: 3}
   m_PrefabInstance: {fileID: 5926530371928374448}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6205293176753221323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6360335041950351104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddb24d06d529ae2469ae62224ffb3a4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &-9186934315885339688
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -97,6 +89,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &6205293176753221323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6360335041950351104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb24d06d529ae2469ae62224ffb3a4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8810442078670988219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2917129268352524043, guid: 48b40ae4a9aeb2546a418978c1be0568, type: 3}
