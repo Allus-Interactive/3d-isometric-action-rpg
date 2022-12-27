@@ -16,7 +16,7 @@ A 3D isometric action RPG developed in Unity
 
 <b>Launch Platforms:</b> itch.io, Steam(?)
 
-<b>Brief Game Summary:</b> Project “Titan” is an ARPG with a semi-serious story mixed with some daft/comedic/sarcastic dialogue. The game is set in a fantasy realm during an era when brave Vikings travelled across the Sea from their homeland to find fame and fortune in foreign lands. As our young, brash hero, you must battle the Queen’s soldiers and wild monsters as you traverse the land; finding ancient weapons, helping various NPCs, venturing across the realm (using special “Wizard Magik” known as “fast-travel”), and seeking even bigger and badder enemies/monsters to slay, ending with the infamous ‘King of Monsters’.
+<b>Brief Game Summary:</b> This project is a 3D Action RPG. The game is set in a fantasy realm during an era when brave Vikings travelled across the Sea from their homeland to find fame and fortune in foreign lands. As our young, brash hero, you must venture across the realm; battling the Queen’s soldiers and wild monsters, finding ancient and powerful weapons, helping various NPCs, and of obviously seeking even bigger and badder enemies/monsters to defeat. Of course, it is the ambition of every viking to demonstrate their strength and battle prowess by finding and slaying the infamous ‘King of Monsters’.
 
 ## Planned Feature Development:
 
