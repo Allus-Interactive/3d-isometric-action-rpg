@@ -6,6 +6,15 @@ namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
+        Fighter fighter;
+        Mover mover;
+
+        private void Start()
+        {
+            fighter = GetComponent<Fighter>();
+            mover = GetComponent<Mover>();
+        }
+
         void Update()
         {
             if (InteractWithCombat()) return;
@@ -19,14 +28,14 @@ namespace RPG.Control
             foreach (RaycastHit hit in hits)
             {
                 CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-                if (!GetComponent<Fighter>().CanAttack(target))
+                if (!fighter.CanAttack(target))
                 {
                     continue;
                 }
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    GetComponent<Fighter>().Attack(target);
+                    fighter.Attack(target);
                 }
                 return true;
             }
@@ -41,7 +50,7 @@ namespace RPG.Control
             {
                 if (Input.GetMouseButton(1))
                 {
-                    GetComponent<Mover>().StartMoveAction(hit.point);
+                    mover.StartMoveAction(hit.point);
                 }
                 return true;
             }
