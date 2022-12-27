@@ -61,6 +61,7 @@ namespace RPG.Combat
         // this is an amination event
         void Hit()
         {
+            if (target == null) return;
             target.TakeDamage(weaponDamage);
         }
 
