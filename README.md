@@ -38,5 +38,12 @@ Once the planned features have been implemented, then these features will begin 
 - Branching dialogue system
 - Shops and Abilities
 
+<!--
 ---
+## Controls
 
+- LMB - Interact/Attack
+- RMB - Move
+- Esc - Pause
+- Tab - Inventory
+--->
