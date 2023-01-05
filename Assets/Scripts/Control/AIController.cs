@@ -9,13 +9,11 @@ namespace RPG.Control
         [SerializeField] float chaseDistance = 5f;
 
         Fighter fighter;
-        Mover mover;
         GameObject player;
 
         private void Start()
         {
             fighter = GetComponent<Fighter>();
-            mover = GetComponent<Mover>();
             player = GameObject.FindWithTag("Player");
         }
 
@@ -23,8 +21,6 @@ namespace RPG.Control
         {
             if (GetPlayerIsInRange(player) && fighter.CanAttack(player))
             {
-                print(gameObject.name + ": attack the player");
-                // mover.MoveTo(player.transform.position);
                 fighter.Attack(player);
             }
             else
