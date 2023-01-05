@@ -1,6 +1,7 @@
 using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
+using System;
 using UnityEngine;
 
 namespace RPG.Control
@@ -9,6 +10,8 @@ namespace RPG.Control
     {
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float suspicionTime = 5f;
+        [SerializeField] float waypointTolerence = 1f;
+        [SerializeField] PatrolPath patrolPath;
 
         ActionScheduler actionScheduler;
         Fighter fighter;
@@ -17,7 +20,10 @@ namespace RPG.Control
         GameObject player;
 
         Vector3 guardPosition;
+
         float timeSinceLastSawPlayer = Mathf.Infinity;
+
+        int currentWaypointIndex = 0;
 
         private void Start()
         {
@@ -45,7 +51,7 @@ namespace RPG.Control
             }
             else
             {
-                GuardBehaviour();
+                PatrolBehaviour();
             }
 
             timeSinceLastSawPlayer += Time.deltaTime;
@@ -60,11 +66,36 @@ namespace RPG.Control
             actionScheduler.CancelCurrentAction();
         }
 
-        private void GuardBehaviour()
+        private void PatrolBehaviour()
         {
-            mover.StartMoveAction(guardPosition);
+            Vector3 nextPosition = guardPosition;
+
+            if (patrolPath !=  null)
+            {
+                if (AtWaypoint())
+                {
+                    CycleWaypoint();
+                }
+                nextPosition = GetCurrentWayPoint();
+            }
+            mover.StartMoveAction(nextPosition);
         }
 
+        private bool AtWaypoint()
+        {
+            float distanceToWaypoint = Vector3.Distance(transform.position, GetCurrentWayPoint());
+            return distanceToWaypoint < waypointTolerence;
+        }
+
+        private void CycleWaypoint()
+        {
+            currentWaypointIndex = patrolPath.GetNextWaypoint(currentWaypointIndex);
+        }
+
+        private Vector3 GetCurrentWayPoint()
+        {
+            return patrolPath.GetWaypoint(currentWaypointIndex);
+        }
 
         private bool GetPlayerIsInRange(GameObject player)
         {
